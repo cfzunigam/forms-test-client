@@ -1,0 +1,20 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of menuItems">
+      <ng-container *ngIf="item.label === 'Búsqueda formulario'; else normalLink">
+        <a (click)="toggleInput()">{{ item.label }}</a>
+        <div *ngIf="showInput">
+          <input type="text" [(ngModel)]="formId" placeholder="Ingresa el ID del formulario" />
+          <button (click)="searchForm()">Buscar</button>
+        </div>
+      </ng-container>
+      <ng-template #normalLink>
+        <a [routerLink]="item.route">{{ item.label }}</a>
+      </ng-template>
+    </li>
+  </ul>
+</nav>
+
+<div *ngIf="searchedLabel">
+<p>{{ searchedLabel }}</p>
+</div>

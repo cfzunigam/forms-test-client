@@ -1,0 +1,28 @@
+<div *ngIf="errorMessage" class="error-message">
+  No existe el formulario
+</div>
+
+<div *ngIf="formServiceResponse" class="response-container">
+  <div class="response-item">
+    <label>ID:</label>
+    <span>{{ formServiceResponse.id }}</span>
+  </div>
+  <div class="response-item">
+    <label>Name:</label>
+    <span>{{ formServiceResponse.name }}</span>
+  </div>
+  <div class="response-item">
+    <label>Description:</label>
+    <span>{{ formServiceResponse.description }}</span>
+  </div>
+
+  <div class="fields-container">
+    <div *ngFor="let item of formServiceResponse.fields" class="field-item">
+      <div *ngFor="let field of getField(item)" class="field-detail">
+        <strong>{{ field }}:</strong> <span>{{ item[field] }}</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-button" [routerLink]="['/']">Volver al Home</button>
+</div>

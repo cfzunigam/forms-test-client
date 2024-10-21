@@ -73,6 +73,9 @@
               "buildTarget": "forms-test-client:build:development"
             }
           },
+          "options": {
+            "port": 3000
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -102,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b8565545-2de0-4f3a-8bdf-52efc556b92d"
   }
 }
